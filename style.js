@@ -6,6 +6,23 @@ define(['log!./style', 'module'], function (log, module) {
   var styleLinks = {};
   var pluginPrefix = module.id;
 
+  var extensions = module.config().extensions || {};
+  var defaultExt = extensions['*'] || extensions[''] || '.css';
+
+  function findExtension (name) {
+    var extension = defaultExt;
+    var match = '';
+
+    for (var path in extensions) {
+      if (path.length > match.length && (name === path || name.lastIndexOf(path + '/', 0) === 0)) {
+        match = path;
+        extension = extensions[path];
+      }
+    }
+
+    return extension;
+  }
+
   requirejs.onResourceLoad = function (context, module, deps) {
     var styleNames = [];
 
@@ -45,7 +62,7 @@ define(['log!./style', 'module'], function (log, module) {
           loaded: false
         };
 
-        styleInfo.url = styleInfo.url.substring(0, styleInfo.url.lastIndexOf('.')) + '.css';
+        styleInfo.url = styleInfo.url.substring(0, styleInfo.url.lastIndexOf('.')) + findExtension(name);
         styleLinks[name] = styleInfo;
       }
 

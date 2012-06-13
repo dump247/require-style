@@ -6,6 +6,15 @@ require.config({
       'style': '../style',
       'log': 'lib/log'
     }
+  },
+
+  config: {
+    '../style': {
+      extensions: {
+        'other1': '.styl',
+        'other1/a/b': '.less'
+      }
+    }
   }
 });
 

@@ -33,11 +33,31 @@ The result should be something like this:
 </head>
 ```
 
+# Configuration
+
+## Extensions
+
+By default, the style plugin uses a .css extension for stylesheets. This
+can be changed globally or for specific stylesheets.
+
+```javascript
+require.config({
+  config: {
+    style: {
+      extensions: {
+        '*':              '.less', // change the default to .less
+        'lib/css':        '.css',  // use .css for lib/css and files it contains
+        'lib/css/stylus': '.styl'  // except for the stylus directory
+      }
+    }
+  }
+});
+```
+
 # TODO
 
 * Detect when stylesheet is actually loaded. I have read that this is
   not well supported by major browsers.
-* Configurable extension names (currently hard coded to .css)
 * Generate single stylesheet or \<style\> elements during build
 
 # License
