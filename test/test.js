@@ -1,4 +1,4 @@
-/*global define, describe, it, expect */
+/*global define, describe, it, expect, document, _ */
 
 define(['style', 'style!simple', 'style!other1', 'style!other1/a', 'style!other1/a/b/c'], function (style) {
   describe('Style', function () {
