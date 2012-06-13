@@ -1,5 +1,7 @@
 Plugin that uses requirejs dependency management to insert links to
-stylesheets into the head of the document.
+stylesheets into the head of the document. Ensures that the order of the
+stylesheets is maintained (stylesheets of dependencies are loaded before
+the module's stylesheets).
 
 # Dependencies
 
