@@ -43,7 +43,7 @@ define(['log!./style', 'module'], function (log, module) {
     }
 
     if (styleNames.length > 0) {
-      log.debug('Added', styleNames.length, 'stylesheets for', module.name, ':', styleNames);
+      log.info('Added', styleNames.length, 'stylesheets for', module.name, ':', styleNames);
     }
 
     if (onResourceLoad) onResourceLoad.apply(this, arguments);
