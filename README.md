@@ -56,6 +56,8 @@ require.config({
 
 # TODO
 
+* Support loading stylesheets as dependencies of require call, not just
+  define
 * Detect when stylesheet is actually loaded. I have read that this is
   not well supported by major browsers.
 * Generate single stylesheet or \<style\> elements during build
