@@ -38,7 +38,7 @@ The result should be something like this:
 * Detect when stylesheet is actually loaded. I have read that this is
   not well supported by major browsers.
 * Configurable extension names (currently hard coded to .css)
-* Generate single stylesheet or <style> elements during build
+* Generate single stylesheet or \<style\> elements during build
 
 # License
 
