@@ -8,6 +8,7 @@ define(['log!./style', 'module'], function (log, module) {
 
   var extensions = module.config().extensions || {};
   var defaultExt = extensions['*'] || extensions[''] || '.css';
+  log.debug('Default extension:', defaultExt, 'Extension map:', extensions);
 
   function findExtension (name) {
     var extension = defaultExt;
